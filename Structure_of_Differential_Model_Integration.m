@@ -11,20 +11,7 @@ function [] = Structure_of_Differential_Model_Integration( )
                                         287, % gas constant for air
                                         500, % mass flow rate inlet
                                         800]; % mass flow rate outlet
-
-    % parameters_of_differential_model = [1.024, % density
-    %                                     717, % C_v
-    %                                     10, % Volume
-    %                                     10, % mass
-    %                                     300000, % enthalpy input
-    %                                     293.15, % Temperature input
-    %                                     400000, % enthalpy output
-    %                                     393.15, % Temperature output
-    %                                     287, % gas constant for air
-    %                                     2, % mass flow rate inlet
-    %                                     1.5]; % mass flow rate outlet
-                       
-    
+    % 11 elements
     %Integrator Options
     options_ode = odeset('RelTol', 1e-3, 'AbsTol', 1e-6);
 
@@ -49,11 +36,11 @@ function [dY_dt] = differential_model(time, Y, parameters_of_differential_model)
     density = parameters_of_differential_model(1); % kg/m^3
     C_v = parameters_of_differential_model(2); % J/(kg*K)
     Volume = parameters_of_differential_model(3); % m^3
-    mass = parameters_of_differential_model(4); % kg
+    % mass = parameters_of_differential_model(4); % kg
     enthalpy_input = parameters_of_differential_model(5); % J
-    Temperature_input = parameters_of_differential_model(6); % K
+    % Temperature_input = parameters_of_differential_model(6); % K
     enthalpy_output = parameters_of_differential_model(7); % J
-    Temperature_output = parameters_of_differential_model(8); % K
+    % Temperature_output = parameters_of_differential_model(8); % K
     R = parameters_of_differential_model(9); % J/(kg*K)
     mass_inlet = parameters_of_differential_model(10); % kg/s
     mass_outlet = parameters_of_differential_model(11); % kg/s
